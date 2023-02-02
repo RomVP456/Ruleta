@@ -12,3 +12,13 @@ for x in range(width):
 
 plt.imshow(image,cmap='gray')
 plt.show()
+
+def RotarImagen(imagen):
+    plt.imshow(imagen,cmap='gray')
+    plt.ion()
+
+    for i in range(360):
+        imagen = transform.rotate(imagen,i/10,cval=255)
+        plt.imshow(imagen,cmap='gray')
+        plt.pause(0.1)
+        plt.cla()
